@@ -2,7 +2,7 @@ This standalone JAVA program parse the data from a CSV file and inserts it into 
 
 This was built using gradle and JAVA 1.8
 
-Command to run: java -jar CSVProcess.jar '<pathToFile>'
+Command to run: java -jar CSVProcess.jar <pathToFile>
 
 The output files will be created at the location of the input CSV.
 
