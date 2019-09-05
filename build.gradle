@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+
+    compile 'org.xerial:sqlite-jdbc:3.7.2'
+    compile 'com.opencsv:opencsv:4.1'
+
+    testImplementation 'junit:junit:4.12'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'CSVProcess'
+    }
+    from {
+    	configurations.compile.collect {it.isDirectory() ? it : zipTree(it) }
+    }
+    archiveName = 'CSVProcess.jar'
+}
